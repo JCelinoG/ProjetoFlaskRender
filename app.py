@@ -1,6 +1,9 @@
 from flask import Flask, render_template, request
 from database.conexao import conexao, cursor
 
+from dotenv import load_dotenv
+load_dotenv()
+
 app = Flask(__name__)
 
 

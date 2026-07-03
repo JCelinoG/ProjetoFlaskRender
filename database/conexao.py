@@ -1,11 +1,12 @@
 import mysql.connector
+import os
 
 conexao = mysql.connector.connect(
-    host="mysql-1d4ea698-crud-teste.f.aivencloud.com",
-    port=11712,
-    user="avnadmin",
-    password="AVNS_YVkVhfC9EsuI9R77hI2",
-    database="defaultdb",
+    host=os.getenv("DB_HOST"),
+    port=int(os.getenv("DB_PORT")),
+    user=os.getenv("DB_USER"),
+    password=os.getenv("DB_PASSWORD"),
+    database=os.getenv("DB_NAME"),
     ssl_disabled=False
 )
 
