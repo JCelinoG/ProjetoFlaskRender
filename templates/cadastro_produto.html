@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Cadastro Produto</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>
+
+        Cadastro de Produto
+
+    </h1>
+
+    <form action="/salvar" method="POST">
+
+        <input
+            type="text"
+            name="nome"
+            placeholder="Nome do produto"
+            required>
+
+        <input
+            type="number"
+            step="0.01"
+            name="preco"
+            placeholder="Preço"
+            required>
+
+        <input
+            type="number"
+            name="estoque"
+            placeholder="Estoque"
+            required>
+
+        <select name="categoria">
+
+            <option>Informática</option>
+
+            <option>Periféricos</option>
+
+            <option>Escritório</option>
+
+        </select>
+
+        <button>
+
+            Salvar Produto
+
+        </button>
+
+    </form>
+
+</div>
+
+</body>
+
+</html>

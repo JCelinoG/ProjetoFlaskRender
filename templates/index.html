@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
 
     <meta charset="UTF-8">
 
-    <title>Projeto Flask</title>
+    <title>Loja Flask</title>
 
     <link rel="stylesheet"
-          href="{{ url_for('static', filename='style.css') }}">
+          href="{{ url_for('static', filename='css/style.css') }}">
 
 </head>
 
@@ -16,19 +16,23 @@
 
     <div class="container">
 
-        <h1>Projeto funcionando!</h1>
+        <h1>Loja Virtual</h1>
 
         <p>
 
-            Este projeto está rodando com Flask.
+            Projeto utilizando Flask + MySQL
 
         </p>
 
-        <button>
+        <a href="/cadastro">
 
-            Teste Render
+            <button>
 
-        </button>
+                Cadastrar Produto
+
+            </button>
+
+        </a>
 
     </div>
 

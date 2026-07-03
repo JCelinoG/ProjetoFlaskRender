@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Sucesso</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>
+
+        Produto cadastrado!
+
+    </h1>
+
+    <p>
+
+        {{ nome }} foi salvo no banco de dados.
+
+    </p>
+
+    <a href="/cadastro">
+
+        <button>
+
+            Novo Cadastro
+
+        </button>
+
+    </a>
+
+</div>
+
+</body>
+
+</html>
