@@ -1,8 +1,5 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 from database.conexao import conexao, cursor
-
-from dotenv import load_dotenv
-load_dotenv()
 
 app = Flask(__name__)
 
@@ -10,13 +7,10 @@ app = Flask(__name__)
 @app.route("/")
 def home():
 
-    return render_template("index.html")
+    cursor.execute("SELECT * FROM produto")
+    produtos = cursor.fetchall()
 
-
-@app.route("/cadastro")
-def cadastro():
-
-    return render_template("cadastro_produto.html")
+    return render_template("index.html", produtos=produtos)
 
 
 @app.route("/salvar", methods=["POST"])
@@ -35,15 +29,10 @@ def salvar():
     valores = (nome, preco, estoque, categoria)
 
     cursor.execute(sql, valores)
-
     conexao.commit()
 
-    return render_template(
-        "sucesso.html",
-        nome=nome
-    )
+    return redirect("/") 
 
 
 if __name__ == "__main__":
-
     app.run(debug=True)

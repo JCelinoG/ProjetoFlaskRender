@@ -63,6 +63,26 @@
 
 </div>
 
+<hr>
+
+<h2>Produtos cadastrados</h2>
+
+{% for produto in produtos %}
+
+    <div style="border:1px solid #ccc; padding:10px; margin:10px; border-radius:8px;">
+
+        <h3>{{ produto.nome }}</h3>
+
+        <p>Preço: R$ {{ produto.preco }}</p>
+
+        <p>Estoque: {{ produto.estoque }}</p>
+
+        <p>Categoria: {{ produto.categoria }}</p>
+
+    </div>
+
+{% endfor %}
+
 </body>
 
 </html>
