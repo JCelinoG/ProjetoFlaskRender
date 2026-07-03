@@ -10,3 +10,13 @@ conexao = mysql.connector.connect(
 )
 
 cursor = conexao.cursor(dictionary=True)
+
+cursor.execute("SELECT * FROM produto")
+
+produtos = cursor.fetchall()
+
+for produto in produtos:
+    print(produto)
+
+cursor.close()
+conexao.close()
