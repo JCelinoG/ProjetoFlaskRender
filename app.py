@@ -6,10 +6,8 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-
     cursor.execute("SELECT * FROM produto")
     produtos = cursor.fetchall()
-
     return render_template("index.html", produtos=produtos)
 
 
@@ -23,7 +21,7 @@ def salvar():
 
     sql = """
     INSERT INTO produto(nome, preco, estoque, categoria)
-    VALUES (%s,%s,%s,%s)
+    VALUES (%s, %s, %s, %s)
     """
 
     valores = (nome, preco, estoque, categoria)
@@ -31,7 +29,7 @@ def salvar():
     cursor.execute(sql, valores)
     conexao.commit()
 
-    return redirect("/") 
+    return redirect("/")
 
 
 if __name__ == "__main__":
